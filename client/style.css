@@ -1,67 +1,242 @@
- .results-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 1.5rem;
-} 
-.container{
-    background-color: #0f172a;
-    color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+:root {
+    --color-bg: #f8fafc;
+    --color-surface: #ffffff;
+    --color-border: #e2e8f0;
+    --color-border-hover: #cbd5e1;
+    --color-text-primary: #0f172a;
+    --color-text-secondary: #64748b;
+    --color-text-muted: #94a3b8;
+    --color-accent: #10b981;
+    --color-accent-light: #d1fae5;
+    --color-accent-text: #065f46;
+    --color-near: #f59e0b;
+    --color-near-light: #fef3c7;
+    --color-near-text: #92400e;
+    --color-btn: #0f172a;
+    --color-btn-hover: #1e293b;
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 14px;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04);
+    --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -1px rgba(0,0,0,0.04);
+    --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.08), 0 4px 6px -2px rgba(0,0,0,0.04);
+    --font: 'Inter', system-ui, sans-serif;
 }
-.country-card{
-    background-color: #0f172a;
-    color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-size: 16px; }
+
+body {
+    font-family: var(--font);
+    background-color: var(--color-bg);
+    color: var(--color-text-primary);
+    min-height: 100vh;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
 }
-.input-group{
+
+
+.app-shell {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+}
+
+.hero {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.hero h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: var(--color-text-primary);
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    font-size: 0.95rem;
+    color: var(--color-text-secondary);
+    font-weight: 400;
+}
+
+/* ===== Search Card ===== */
+.search-container {
+    margin-bottom: 40px;
+}
+
+.input-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 20px;
+    box-shadow: var(--shadow-sm);
+}
+
+.input-controls {
     display: flex;
     gap: 10px;
-    margin-bottom: 20px;
+    align-items: center;
+    flex-wrap: wrap;
 }
-.input-group input{
+
+.input-controls select,
+.input-controls input {
     flex: 1;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
-.input-group button{
-    padding: 10px 20px;
-    border-radius: 5px;
-    border: none;
-    background-color: #0f172a;
-    color: white;
-    cursor: pointer;
-}
-.country-name{
-    font-weight: bold;
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-}
-.currency-info{
+    min-width: 120px;
+    padding: 10px 14px;
+    font-family: var(--font);
     font-size: 0.9rem;
-    color: #ccc;
-    margin-bottom: 10px;
+    color: var(--color-text-primary);
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    appearance: auto;
 }
-.amount-converted{
-    font-weight: bold;
-    font-size: 1.2rem;
-    color: #0f172a;
+
+.input-controls select:focus,
+.input-controls input:focus {
+    border-color: var(--color-text-primary);
+    box-shadow: 0 0 0 3px rgba(15, 23, 42, 0.06);
 }
-.loader{
+
+.input-controls input::placeholder {
+    color: var(--color-text-muted);
+}
+
+.primary-btn {
+    padding: 10px 22px;
+    font-family: var(--font);
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #fff;
+    background-color: var(--color-btn);
+    border: none;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.primary-btn:hover { background-color: var(--color-btn-hover); }
+.primary-btn:active { transform: scale(0.98); }
+
+/* ===== Loader ===== */
+.loader-container {
     display: none;
-    margin: 20px auto;
-    width: 40px;
-    height: 40px;
-    border: 4px solid #ccc;
-    border-top: 4px solid #0f172a;
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
+    justify-content: center;
+    padding: 40px 0;
 }
+
+.spinner {
+    width: 32px;
+    height: 32px;
+    border: 3px solid var(--color-border);
+    border-top-color: var(--color-text-primary);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* ===== Results Grid ===== */
+.results-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 14px;
+}
+
+/* ===== Country Cards ===== */
+.country-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: 18px 20px;
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow 0.2s, border-color 0.2s, transform 0.2s;
+    animation: fadeUp 0.4s ease both;
+}
+
+.country-card:hover {
+    box-shadow: var(--shadow-md);
+    border-color: var(--color-border-hover);
+    transform: translateY(-2px);
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== Card Layout ===== */
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.country-name {
+    font-size: 0.92rem;
+    font-weight: 600;
+    color: var(--color-text-primary);
+    line-height: 1.3;
+}
+
+.currency-info {
+    font-size: 0.78rem;
+    color: var(--color-text-muted);
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.amount-converted {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+}
+
+/* ===== Tags ===== */
+.tag {
+    display: inline-block;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 99px;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.tag.millionaire {
+    background-color: var(--color-accent-light);
+    color: var(--color-accent-text);
+}
+
+.tag.near {
+    background-color: var(--color-near-light);
+    color: var(--color-near-text);
+}
+
+/* ===== Card State: near ===== */
+.country-card.near {
+    border-color: #fde68a;
+}
+
+/* ===== Empty State ===== */
+.empty-state {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 60px 24px;
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
 }

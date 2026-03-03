@@ -10,18 +10,29 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Outfit:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <h1>Millionaire Map</h1>
-        <p class="subtitle">Enter your savings and discover where you're already a millionaire.</p>
+    <main class="app-shell">
+        <header class="hero">
+            <h1>Millionaire Map</h1>
+            <p class="subtitle">Where's your wealth worth a million?</p>
+        </header>
         
-        <div class="input-group">
-            <input id="amount" type="number" placeholder="Enter amount in ZAR" autofocus>
-            <button onclick="check()">Explore</button>
-        </div>
+        <section class="search-container">
+            <div class="input-card">
+                <div class="input-controls">
+                    <select id="baseCurrency" aria-label="Select base currency"></select>
+                    <input id="amount" type="number" placeholder="Enter amount" autofocus aria-label="Enter amount">
+                    <button class="primary-btn" onclick="check()">Explore</button>
+                </div>
+            </div>
+        </section>
 
-        <div id="loader" class="loader"></div>
-        <div id="results" class="results-grid"></div>
-    </div>
+        <section id="loader" class="loader-container">
+            <div class="spinner"></div>
+        </section>
+
+        <section id="results" class="results-layout"></section>
+        <div id="close_results"></div>
+    </main>
 
     <script src="app.js"></script>
 </body>
