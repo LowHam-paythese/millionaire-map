@@ -1,0 +1,31 @@
+name: Node.js CI
+
+# This tells GitHub WHEN to run the script
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Use Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Start the app (Smoke Test)
+      # This runs the app and kills it after 5 seconds to see if it crashes on startup
+      run: |
+        npm start & 
+        sleep 5
+        kill $!
