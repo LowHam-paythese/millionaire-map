@@ -49,7 +49,7 @@ This project demonstrates real-time API integration, clean REST API design, and 
 ### Installation
 
 ```bash
-git clone https://github.com/your-username/millionaire-map.git
+git clone https://github.com/LowHam-paythese/millionaire-explorer.git
 cd millionaire-map
 npm install
 ```
