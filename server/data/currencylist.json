@@ -1,0 +1,98 @@
+[
+  {
+    "name": "Japan",
+    "currency": "JPY"
+  },
+  {
+    "name": "South Korea",
+    "currency": "KRW"
+  },
+  {
+    "name": "Chile",
+    "currency": "CLP"
+  },
+  {
+    "name": "Hungary",
+    "currency": "HUF"
+  },
+  {
+    "name": "Iceland",
+    "currency": "ISK"
+  },
+  {
+    "name": "Kazakhstan",
+    "currency": "KZT"
+  },
+  {
+    "name": "Colombia",
+    "currency": "COP"
+  },
+  {
+    "name": "Paraguay",
+    "currency": "PYG"
+  },
+  {
+    "name": "Indonesia",
+    "currency": "IDR"
+  },
+  {
+    "name": "Vietnam",
+    "currency": "VND"
+  },
+  {
+    "name": "Mongolia",
+    "currency": "MNT"
+  },
+  {
+    "name": "Guinea",
+    "currency": "GNF"
+  },
+  {
+    "name": "Sierra Leone",
+    "currency": "SLL"
+  },
+  {
+    "name": "Uzbekistan",
+    "currency": "UZS"
+  },
+  {
+    "name": "Laos",
+    "currency": "LAK"
+  },
+  {
+    "name": "Cambodia",
+    "currency": "KHR"
+  },
+  {
+    "name": "Uganda",
+    "currency": "UGX"
+  },
+  {
+    "name": "Tanzania",
+    "currency": "TZS"
+  },
+  {
+    "name": "Iraq",
+    "currency": "IQD"
+  },
+  {
+    "name": "Guyana",
+    "currency": "GYD"
+  },
+  {
+    "name": "Rwanda",
+    "currency": "RWF"
+  },
+  {
+    "name": "Malawi",
+    "currency": "MWK"
+  },
+  {
+    "name": "Burundi",
+    "currency": "BIF"
+  },
+  {
+    "name": "South Sudan",
+    "currency": "SSP"
+  }
+]
