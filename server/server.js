@@ -26,29 +26,57 @@ const countries = JSON.parse(
 async function checkMillionaire(amountZAR) {
   const results = [];
 
-  for (const country of countries) {
-    console.log(`Checking ${country.name} (${country.currency})...`);
+
+  // for (const country of countries) {
+
+  // console.log(countries);
+
+  for (const key in countries) {
+    const country = countries[key];
+
+    // console.log(country)
+    // console.log("this is the values", key, country)
     const converted = await getConvertedAmount(
       "ZAR",
-      country.currency,
+      key,
       amountZAR,
     );
 
-    if (converted && parseFloat(converted) >= 1000000) {
-      console.log(
-        `Millionaire in ${country.name} (${country.currency}): ${converted} >= 1000000`,
-      );
+
+    console.log("This is the converted amount", converted, "this is the country", country)
+
+    if (parseFloat(converted) >= 1000000) {
       results.push({
-        country: country.name,
-        currency: country.currency,
+        country: country,
+        currency: key,
         converted: converted,
       });
-    } else {
-      console.log(
-        `Not a millionaire in ${country.name} (${country.currency}): ${converted} < 1000000`,
-      );
     }
+
   }
+
+  // console.log(`Checking ${country.name} (${country.currency})...`);
+  // const converted = await getConvertedAmount(
+  //   "ZAR",
+  //   country.currency,
+  //   amountZAR,
+  // );
+
+  // if (converted && parseFloat(converted) >= 1000000) {
+  //   console.log(
+  //     `Millionaire in ${country.name} (${country.currency}): ${converted} >= 1000000`,
+  //   );
+  //   results.push({
+  //     country: country.name,
+  //     currency: country.currency,
+  //     converted: converted,
+  //   });
+  // } else {
+  //   console.log(
+  //     `Not a millionaire in ${country.name} (${country.currency}): ${converted} < 1000000`,
+  //   );
+  // }
+  // }
 
   return results;
 }
