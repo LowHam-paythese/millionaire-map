@@ -1,98 +1,32 @@
-[
-  {
-    "name": "Japan",
-    "currency": "JPY"
-  },
-  {
-    "name": "South Korea",
-    "currency": "KRW"
-  },
-  {
-    "name": "Chile",
-    "currency": "CLP"
-  },
-  {
-    "name": "Hungary",
-    "currency": "HUF"
-  },
-  {
-    "name": "Iceland",
-    "currency": "ISK"
-  },
-  {
-    "name": "Kazakhstan",
-    "currency": "KZT"
-  },
-  {
-    "name": "Colombia",
-    "currency": "COP"
-  },
-  {
-    "name": "Paraguay",
-    "currency": "PYG"
-  },
-  {
-    "name": "Indonesia",
-    "currency": "IDR"
-  },
-  {
-    "name": "Vietnam",
-    "currency": "VND"
-  },
-  {
-    "name": "Mongolia",
-    "currency": "MNT"
-  },
-  {
-    "name": "Guinea",
-    "currency": "GNF"
-  },
-  {
-    "name": "Sierra Leone",
-    "currency": "SLL"
-  },
-  {
-    "name": "Uzbekistan",
-    "currency": "UZS"
-  },
-  {
-    "name": "Laos",
-    "currency": "LAK"
-  },
-  {
-    "name": "Cambodia",
-    "currency": "KHR"
-  },
-  {
-    "name": "Uganda",
-    "currency": "UGX"
-  },
-  {
-    "name": "Tanzania",
-    "currency": "TZS"
-  },
-  {
-    "name": "Iraq",
-    "currency": "IQD"
-  },
-  {
-    "name": "Guyana",
-    "currency": "GYD"
-  },
-  {
-    "name": "Rwanda",
-    "currency": "RWF"
-  },
-  {
-    "name": "Malawi",
-    "currency": "MWK"
-  },
-  {
-    "name": "Burundi",
-    "currency": "BIF"
-  },
-  {
-    "name": "South Sudan",
-    "currency": "SSP"
-  }
-]
+{
+  "AUD": "Australian Dollar",
+  "BRL": "Brazilian Real",
+  "CAD": "Canadian Dollar",
+  "CHF": "Swiss Franc",
+  "CNY": "Chinese Renminbi Yuan",
+  "CZK": "Czech Koruna",
+  "DKK": "Danish Krone",
+  "EUR": "Euro",
+  "GBP": "British Pound",
+  "HKD": "Hong Kong Dollar",
+  "HUF": "Hungarian Forint",
+  "IDR": "Indonesian Rupiah",
+  "ILS": "Israeli New Shekel",
+  "INR": "Indian Rupee",
+  "ISK": "Icelandic Króna",
+  "JPY": "Japanese Yen",
+  "KRW": "South Korean Won",
+  "MXN": "Mexican Peso",
+  "MYR": "Malaysian Ringgit",
+  "NOK": "Norwegian Krone",
+  "NZD": "New Zealand Dollar",
+  "PHP": "Philippine Peso",
+  "PLN": "Polish Złoty",
+  "RON": "Romanian Leu",
+  "SEK": "Swedish Krona",
+  "SGD": "Singapore Dollar",
+  "THB": "Thai Baht",
+  "TRY": "Turkish Lira",
+  "USD": "United States Dollar",
+  "ZAR": "South African Rand"
+}

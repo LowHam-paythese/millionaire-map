@@ -23,34 +23,35 @@ const countries = JSON.parse(
   fs.readFileSync(path.join(__dirname, "./data/currencylist.json"), "utf8"),
 );
 
-async function checkMillionaire(amountZAR) {
-  const results = [];
+async function checkMillionaire(amount, baseCurrency = "ZAR") {
+  const millionaireCountries = [];
+  const nearMillionaireCountries = [];
+  const base = baseCurrency.toUpperCase();
 
-  for (const country of countries) {
-    console.log(`Checking ${country.name} (${country.currency})...`);
-    const converted = await getConvertedAmount(
-      "ZAR",
-      country.currency,
-      amountZAR,
-    );
+  for (const key in countries) {
+    if (key === base) continue;
+    const country = countries[key];
+    const converted = await getConvertedAmount(base, key, amount);
 
-    if (converted && parseFloat(converted) >= 1000000) {
-      console.log(
-        `Millionaire in ${country.name} (${country.currency}): ${converted} >= 1000000`,
-      );
-      results.push({
-        country: country.name,
-        currency: country.currency,
-        converted: converted,
-      });
-    } else {
-      console.log(
-        `Not a millionaire in ${country.name} (${country.currency}): ${converted} < 1000000`,
-      );
+    if (converted) {
+      const val = parseFloat(converted);
+      if (val >= 1000000) {
+        millionaireCountries.push({
+          country: country,
+          currency: key,
+          converted: converted,
+        });
+      } else if (val >= 800000) {
+        nearMillionaireCountries.push({
+          country: country,
+          currency: key,
+          converted: converted,
+        });
+      }
     }
   }
 
-  return results;
+  return { millionaireCountries, nearMillionaireCountries };
 }
 
 app.get("/millionaire/:amount", async (req, res) => {
@@ -61,12 +62,14 @@ app.get("/millionaire/:amount", async (req, res) => {
     return res.status(400).json({ success: false, message: "Invalid amount" });
   }
 
-  const millionaireCountries = await checkMillionaire(numericAmount);
+  const { base } = req.query;
+  const { millionaireCountries, nearMillionaireCountries } = await checkMillionaire(numericAmount, base);
 
   res.json({
     success: true,
     original: numericAmount,
     millionaireCountries,
+    nearMillionaireCountries,
   });
 });
 
