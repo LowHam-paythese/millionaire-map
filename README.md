@@ -1,7 +1,10 @@
 # 💰 Millionaire Map
-<img width="1880" height="834" alt="image" src="https://github.com/user-attachments/assets/2f135c8b-34cf-4ccb-a186-3d63162fb4fc" />
 
-> Discover where your savings make you a millionaire — in any currency, anywhere in the world.
+**[View Live App](https://millionaire-map-production.up.railway.app/)**
+
+<img width="1880" height="834" alt="Millionaire Map Dashboard" src="https://github.com/user-attachments/assets/2f135c8b-34cf-4ccb-a186-3d63162fb4fc" />
+
+> **Discover where your savings make you a millionaire — in any currency, anywhere in the world.**
 
 ## Overview
 
