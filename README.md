@@ -2,8 +2,6 @@
 
 **[View Live App](https://millionaire-map-production.up.railway.app/)**
 
-<img width="1880" height="834" alt="Millionaire Map Dashboard" src="https://github.com/user-attachments/assets/2f135c8b-34cf-4ccb-a186-3d63162fb4fc" />
-
 > **Discover where your savings make you a millionaire — in any currency, anywhere in the world.**
 
 ## Overview
@@ -13,6 +11,7 @@
 This project demonstrates real-time API integration, clean REST API design, and a minimalistic frontend built without frameworks — showcasing practical full-stack development skills.
 
 ---
+<img width="1880" height="834" alt="Millionaire Map Dashboard" src="https://github.com/user-attachments/assets/2f135c8b-34cf-4ccb-a186-3d63162fb4fc" />
 
 ## Features
 
