@@ -6,9 +6,14 @@
 
 ## Overview
 
-**Millionaire Map** is a lightweight full-stack web application that calculates where your savings surpass the millionaire threshold in different currencies. It also highlights countries where your wealth is close to reaching one million units in local currency.
+**Millionair Map** is a lightweight full-stack web application that helps users discover where their savings would make them a millionaire in any currency worldwide. By entering an amount and selecting a base currency, the app converts the value across all supported currencies, identifies where the converted amount meets or exceeds one million units, and highlights currencies where the amount is within 20 % of a million.
 
-This project demonstrates real-time API integration, clean REST API design, and a minimalistic frontend built without frameworks — showcasing practical full-stack development skills.
+The project showcases real‑time API integration with the Frankfurter exchange‑rate service, clean REST API design, and a minimalistic vanilla‑JS frontend, providing a clear example of full‑stack development without the overhead of heavy frameworks.
+
+### Why it exists
+
+Many people wonder how far their savings would go in different parts of the world, especially when planning long‑term financial goals or comparing purchasing power across countries. This app provides a simple, interactive way to explore that question, turning abstract exchange‑rate data into tangible, visual results. It also serves as a teaching tool for developers interested in building full‑stack applications that consume external APIs, handle currency conversion, and present data in an engaging UI.
+
 
 ---
 <picture>
